@@ -3,7 +3,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: '阿猛的文档',
+  title: '阿猛的博客',
   tagline: '科技改变世界，技术成就未来！',
   url: 'https://www.ameng.site',
   baseUrl: '/',
@@ -14,10 +14,10 @@ module.exports = {
   projectName: 'amengblog', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: '阿猛',
+      title: '阿猛的博客',
       logo: {
-        alt: '阿猛的文档',
-        src: 'img/logo.png',
+        alt: '阿猛的博客',
+        src: 'img/logo.jpg',
       },
       items: [
         {
