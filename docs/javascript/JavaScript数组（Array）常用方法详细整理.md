@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Manage Docs Versions
+# JavaScript数组（Array）常用方法详细整理
 
 Docusaurus can manage multiple versions of your docs.
 
