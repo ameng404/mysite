@@ -27,11 +27,8 @@ module.exports = {
           label: '前端',
         },
         { to: '/blog', label: '博客', position: 'left' },
-        { to: '/timeline', label: '时间轴', position: 'right' },
-        { to: '/works', label: '作品', position: 'right' },
-        { to: '/about', label: '关于', position: 'right' },
         {
-          href: 'https://github.com/Ameng404',
+          href: 'https://github.com/ameng404',
           label: 'GitHub',
           position: 'right',
         },
