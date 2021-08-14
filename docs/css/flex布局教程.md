@@ -1,55 +1,31 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 ---
 
 # flex布局教程
 
-Docusaurus can manage multiple versions of your docs.
+Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
 
-## Create a docs version
+It builds your site as simple **static HTML, JavaScript and CSS files**.
 
-Release a version 1.0 of your project:
+## Build your site
+
+Build your site **for production**:
 
 ```bash
-npm run docusaurus docs:version 1.0
+npm run build
 ```
 
-The `docs` folder is copied into `versioned_docs/version-1.0` and `versions.json` is created.
+The static files are generated in the `build` folder.
 
-Your docs now have 2 versions:
+## Deploy your site
 
-- `1.0` at `http://localhost:3000/docs/` for the version 1.0 docs
-- `current` at `http://localhost:3000/docs/next/` for the **upcoming, unreleased docs**
+Test your production build locally:
 
-## Add a Version Dropdown
-
-To navigate seamlessly across versions, add a version dropdown.
-
-Modify the `docusaurus.config.js` file:
-
-```js title="docusaurus.config.js"
-module.exports = {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'docsVersionDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
+```bash
+npm run serve
 ```
 
-The docs version dropdown appears in your navbar:
+The `build` folder is now served at `http://localhost:3000/`.
 
-![Docs Version Dropdown](/img/tutorial/docsVersionDropdown.png)
-
-## Update an existing version
-
-It is possible to edit versioned docs in their respective folder:
-
-- `versioned_docs/version-1.0/hello.md` updates `http://localhost:3000/docs/hello`
-- `docs/hello.md` updates `http://localhost:3000/docs/next/hello`
+You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).

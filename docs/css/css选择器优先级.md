@@ -1,88 +1,43 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # css选择器优先级
 
-Let's translate `docs/intro.md` to French.
+Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 
-## Configure i18n
+- `src/pages/index.js` -> `localhost:3000/`
+- `src/pages/foo.md` -> `localhost:3000/foo`
+- `src/pages/foo/bar.js` -> `localhost:3000/foo/bar`
 
-Modify `docusaurus.config.js` to add support for the `fr` locale:
+## Create your first React Page
 
-```js title="docusaurus.config.js"
-module.exports = {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'],
-  },
-};
+Create a file at `src/pages/my-react-page.js`:
+
+```jsx title="src/pages/my-react-page.js"
+import React from 'react';
+import Layout from '@theme/Layout';
+
+export default function MyReactPage() {
+  return (
+    <Layout>
+      <h1>My React page</h1>
+      <p>This is a React page</p>
+    </Layout>
+  );
+}
 ```
 
-## Translate a doc
+A new page is now available at `http://localhost:3000/my-react-page`.
 
-Copy the `docs/intro.md` file to the `i18n/fr` folder:
+## Create your first Markdown Page
 
-```bash
-mkdir -p i18n/fr/docusaurus-plugin-content-docs/current/
+Create a file at `src/pages/my-markdown-page.md`:
 
-cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
+```mdx title="src/pages/my-markdown-page.md"
+# My Markdown page
+
+This is a Markdown page
 ```
 
-Translate `i18n/fr/docusaurus-plugin-content-docs/current/intro.md` in French.
-
-## Start your localized site
-
-Start your site on the French locale:
-
-```bash
-npm run start -- --locale fr
-```
-
-Your localized site is accessible at `http://localhost:3000/fr/` and the `Getting Started` page is translated.
-
-:::caution
-
-In development, you can only use one locale at a same time.
-
-:::
-
-## Add a Locale Dropdown
-
-To navigate seamlessly across languages, add a locale dropdown.
-
-Modify the `docusaurus.config.js` file:
-
-```js title="docusaurus.config.js"
-module.exports = {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'localeDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
-
-The locale dropdown now appears in your navbar:
-
-![Locale Dropdown](/img/tutorial/localeDropdown.png)
-
-## Build your localized site
-
-Build your site for a specific locale:
-
-```bash
-npm run build -- --locale fr
-```
-
-Or build your site to include all the locales at once:
-
-```bash
-npm run build
-```
+A new page is now available at `http://localhost:3000/my-markdown-page`.

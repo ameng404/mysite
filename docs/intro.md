@@ -2,34 +2,16 @@
 sidebar_position: 1
 ---
 
-# 简介
+# 引言
 
-Let's discover **Docusaurus in less than 5 minutes**.
+本文档主要总结了web前端领域中的主要技术点，进行详细剖析。
 
-## Getting Started
+主要介绍了HTML5、CSS3、JavaScript、React等方面的知识点。
 
-Get started by **creating a new site**.
+## 目录
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
+空
 
-## Generate a new site
+## 声明
 
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Start your site
-
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+本站所有内容遵循 CC BY-NC 4.0 协议，转载须注明署名和出处，且不可用于商业用途。若与其他同步平台协议冲突，以本网站为准。
