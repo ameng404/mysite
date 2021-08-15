@@ -12,9 +12,8 @@ jobs:
         node-version: "12.x"
     - name: Build Blog
       run: |
-        npm install
-        npm install -g hexo-cli
-        hexo generate
+        yarn
+        docusaurus build
     - uses: manyuanrong/setup-ossutil@v1.0
       with:
         # endpoint 可以去oss控制台上查看
