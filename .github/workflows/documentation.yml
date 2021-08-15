@@ -35,11 +35,11 @@ jobs:
           node-version: '12.x'
       - uses: webfactory/ssh-agent@v0.5.0
         with:
-          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+          ssh-private-key: ${{ GH_PAGES_DEPLOY }}
       - name: Release to GitHub Pages
         env:
           USE_SSH: true
-          GIT_USER: git
+          GIT_USER: ${{ GH_NAME }}
         run: |
           git config --global user.email "ameng404@qq.com"
           git config --global user.name "ameng404"
