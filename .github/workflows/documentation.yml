@@ -33,7 +33,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-        -secret: ${{ secrets.ACCESS_KEY_SECRET }}
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
@@ -52,12 +51,3 @@ jobs:
             npm i
           fi
           npm run deploy
-      - uses: manyuanrong/setup-ossutil@v1.0
-        with:
-          # endpoint 可以去oss控制台上查看
-          endpoint: "oss-cn-hangzhou.aliyuncs.com"
-          # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
-          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
-          access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
-      - name: Deply To OSS
-        run: ossutil cp public oss://ameng-site/ -rf
