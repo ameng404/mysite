@@ -6,8 +6,8 @@ export default {
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "img/favicon.png",
-  "organizationName": "iameng-cn",
-  "projectName": "iameng-cn.github.io",
+  "organizationName": "Ameng",
+  "projectName": "mysite",
   "themeConfig": {
     "navbar": {
       "title": "iameng.cn",
@@ -39,7 +39,7 @@ export default {
           "position": "left"
         },
         {
-          "href": "https://github.com/iameng-cn",
+          "href": "https://github.com/ameng404",
           "label": "GitHub",
           "position": "right"
         }
@@ -108,12 +108,12 @@ export default {
             },
             {
               "label": "GitHub",
-              "href": "https://github.com/Ameng404"
+              "href": "https://github.com/ameng404"
             }
           ]
         }
       ],
-      "copyright": "<p>Copyright ©2018 - 2022 阿猛的文档, Built with Docusaurus.</p>\n<p><a href=\"http://beian.miit.gov.cn/\" >冀ICP备19004388号-1</a></p>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\">\n<img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"/img/creative-commons-license-icon.png\" /></a>\n<br />本站所有内容遵循 <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-nc/4.0/deed.zh-Hans\" >\nCC BY-NC 4.0 协议</a>\n，转载须注明署名和出处，且不可用于商业用途。若与其他同步平台协议冲突，以本网站为准。"
+      "copyright": "<p>Copyright ©2018 - 2022 阿猛的文档, Built with Docusaurus.</p>\n<p><a href=\"http://beian.miit.gov.cn/\" >冀ICP备19004388号</a></p>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\">\n<img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"/img/creative-commons-license-icon.png\" /></a>\n<br />本站所有内容遵循 <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-nc/4.0/deed.zh-Hans\" >\nCC BY-NC 4.0 协议</a>\n，转载须注明署名和出处，且不可用于商业用途。若与其他同步平台协议冲突，以本网站为准。"
     },
     "prism": {
       "theme": {

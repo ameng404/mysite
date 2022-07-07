@@ -11,8 +11,8 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'iameng-cn', // Usually your GitHub org/user name.
-  projectName: 'iameng-cn.github.io', // Usually your repo name.
+  organizationName: 'Ameng', // Usually your GitHub org/user name.
+  projectName: 'mysite', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'iameng.cn',
@@ -31,7 +31,7 @@ module.exports = {
         { to: '/works', label: '作品', position: 'left' },
         { to: '/about', label: '关于', position: 'left' },
         {
-          href: 'https://github.com/iameng-cn',
+          href: 'https://github.com/ameng404',
           label: 'GitHub',
           position: 'right',
         },
@@ -99,7 +99,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/Ameng404',
+              href: 'https://github.com/ameng404',
             },
           ],
         },

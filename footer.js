@@ -1,6 +1,6 @@
 
 const footer = `<p>Copyright ©2018 - ${new Date().getFullYear()} 阿猛的文档, Built with Docusaurus.</p>
-<p><a href="http://beian.miit.gov.cn/" >冀ICP备19004388号-1</a></p>
+<p><a href="http://beian.miit.gov.cn/" >冀ICP备19004388号</a></p>
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
 <img alt="Creative Commons License" style="border-width:0" src="/img/creative-commons-license-icon.png" /></a>
 <br />本站所有内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh-Hans" >
