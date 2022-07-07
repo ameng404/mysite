@@ -1,0 +1,26 @@
+{
+  "unversionedId": "javascript/ES2020新特性",
+  "id": "javascript/ES2020新特性",
+  "isDocsHomePage": false,
+  "title": "ES2020新特性",
+  "description": "ES2020 已经发布了，一共出9个新特性，下面让我们一起来了解下。",
+  "source": "@site/docs/javascript/ES2020新特性.md",
+  "sourceDirName": "javascript",
+  "slug": "/javascript/ES2020新特性",
+  "permalink": "/docs/javascript/ES2020新特性",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/javascript/ES2020新特性.md",
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ES2019新特性",
+    "permalink": "/docs/javascript/ES2019新特性"
+  },
+  "next": {
+    "title": "ES2021新特性",
+    "permalink": "/docs/javascript/ES2021新特性"
+  }
+}

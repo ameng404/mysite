@@ -1,10 +1,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const footer  = require('./footer');
+const footer = require('./footer');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: '阿猛的博客',
+  title: 'Hello, I am Ameng!',
   tagline: '科技改变世界，技术成就未来！',
   url: 'https://iameng.cn',
   baseUrl: '/',
@@ -126,6 +126,7 @@ module.exports = {
       //... other Algolia params
     },
   },
+  plugins: ["docusaurus-plugin-less"],
   presets: [
     [
       '@docusaurus/preset-classic',

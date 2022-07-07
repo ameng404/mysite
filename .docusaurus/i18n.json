@@ -1,0 +1,13 @@
+{
+  "defaultLocale": "zh-cn",
+  "locales": [
+    "zh-cn"
+  ],
+  "currentLocale": "zh-cn",
+  "localeConfigs": {
+    "zh-cn": {
+      "label": "中文（中国）",
+      "direction": "ltr"
+    }
+  }
+}

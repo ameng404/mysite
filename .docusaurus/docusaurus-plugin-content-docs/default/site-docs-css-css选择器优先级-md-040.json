@@ -1,0 +1,26 @@
+{
+  "unversionedId": "css/css选择器优先级",
+  "id": "css/css选择器优先级",
+  "isDocsHomePage": false,
+  "title": "css选择器优先级",
+  "description": "Add Markdown or React files to src/pages to create a standalone page:",
+  "source": "@site/docs/css/css选择器优先级.md",
+  "sourceDirName": "css",
+  "slug": "/css/css选择器优先级",
+  "permalink": "/docs/css/css选择器优先级",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/css/css选择器优先级.md",
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "引言",
+    "permalink": "/docs/intro"
+  },
+  "next": {
+    "title": "css居中问题详解",
+    "permalink": "/docs/css/css居中问题详解"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "css/css居中问题详解",
+  "id": "css/css居中问题详解",
+  "isDocsHomePage": false,
+  "title": "css居中问题详解",
+  "description": "Documents are groups of pages connected through:",
+  "source": "@site/docs/css/css居中问题详解.md",
+  "sourceDirName": "css",
+  "slug": "/css/css居中问题详解",
+  "permalink": "/docs/css/css居中问题详解",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/css/css居中问题详解.md",
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "css选择器优先级",
+    "permalink": "/docs/css/css选择器优先级"
+  },
+  "next": {
+    "title": "css图片问题处理详解",
+    "permalink": "/docs/css/css图片问题处理详解"
+  }
+}

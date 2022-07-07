@@ -1,0 +1,26 @@
+{
+  "unversionedId": "css/css文字问题处理详解",
+  "id": "css/css文字问题处理详解",
+  "isDocsHomePage": false,
+  "title": "css文字问题处理详解",
+  "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
+  "source": "@site/docs/css/css文字问题处理详解.md",
+  "sourceDirName": "css",
+  "slug": "/css/css文字问题处理详解",
+  "permalink": "/docs/css/css文字问题处理详解",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/css/css文字问题处理详解.md",
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "flex布局教程",
+    "permalink": "/docs/css/flex布局教程"
+  },
+  "next": {
+    "title": "ES2016新特性",
+    "permalink": "/docs/javascript/ES2016新特性"
+  }
+}

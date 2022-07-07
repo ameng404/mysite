@@ -3,8 +3,9 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 10rem 0;
   width: 100%;
+  background-color: rgb(210, 210, 210, .2);
 }
 
 .featureSvg {
