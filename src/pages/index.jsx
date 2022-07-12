@@ -26,12 +26,14 @@ export default function Home() {
             <h1 className={styles.title}>{siteConfig.title}</h1>
             <p  className={styles.subtitle}>{siteConfig.tagline}</p>
             <div className={styles.contact}>
-              <a href="">
+              <div className={styles.dy}>
                 <img className={styles.icon} src="./img/douyin.png" alt="抖音" />
-              </a>
-              <a href="">
+                <img  className={styles.qrcode} src="./img/dyqrcode.jpg" alt="抖音" />
+              </div>
+              <div className={styles.wx}>
                 <img  className={styles.icon} src="./img/wechat.png" alt="微信" />
-              </a>
+                <img  className={styles.qrcode} src="./img/wxqrcode.jpg" alt="微信" />
+              </div>
             </div>
           </div>
           <div className={styles.right}>

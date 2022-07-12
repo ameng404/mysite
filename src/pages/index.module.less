@@ -1,23 +1,19 @@
-/* stylelint-disable docusaurus/copyright-header */
-
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
 .home {
   width: 100vw;
   height: 100vh;
 
   .banner {
     width: 100vw;
-    height: calc(100vh - 57px);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 200px;
+    justify-content: center;
+    align-items: center;
 
     .left {
-      margin-top: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 60px;
 
       .title {
         margin: 30px 0 10px;
@@ -36,6 +32,30 @@
       }
 
       .contact {
+        display: flex;
+        position: relative;
+
+        .qrcode {
+          width: 375px;
+          height: 450px;
+        }
+
+        .dy,
+        .wx {
+          .qrcode {
+            display: none;
+          }
+        }
+
+        .dy:hover,
+        .wx:hover {
+          .qrcode {
+            position: absolute;
+            display: block;
+            z-index: 999;
+          }
+        }
+
         .icon {
           width: 48px;
         }
@@ -47,23 +67,5 @@
       width: 800px;
       height: 800px;
     }
-  }
-
-  .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .features {
-    display: flex;
-    align-items: center;
-    padding: 2rem 0;
-    width: 100%;
-  }
-
-  .featureSvg {
-    height: 200px;
-    width: 200px;
   }
 }
