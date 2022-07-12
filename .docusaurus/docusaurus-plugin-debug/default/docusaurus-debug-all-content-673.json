@@ -518,6 +518,11 @@
   "docusaurus-plugin-content-pages": {
     "default": [
       {
+        "type": "mdx",
+        "permalink": "/about",
+        "source": "@site/src/pages/about.mdx"
+      },
+      {
         "type": "jsx",
         "permalink": "/",
         "source": "@site/src/pages/index.jsx"
@@ -526,11 +531,6 @@
         "type": "mdx",
         "permalink": "/markdown-page",
         "source": "@site/src/pages/markdown-page.md"
-      },
-      {
-        "type": "jsx",
-        "permalink": "/about/",
-        "source": "@site/src/pages/about/index.js"
       },
       {
         "type": "jsx",

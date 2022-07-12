@@ -25,9 +25,9 @@
   "/__docusaurus/debug/routes-244": {
     "component": "component---theme-debug-routes-946-699"
   },
-  "/about/-0fa": {
-    "component": "component---site-src-pages-about-index-js-958-67a",
-    "config": "config---5-e-9-4f3"
+  "/about-408": {
+    "component": "component---theme-mdx-page-1-f-3-b90",
+    "content": "content---aboutc-9-f-e93"
   },
   "/blog-569": {
     "component": "component---theme-blog-list-pagea-6-a-7ba",

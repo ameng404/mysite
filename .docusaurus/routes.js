@@ -44,8 +44,8 @@ export default [
     exact: true
   },
   {
-    path: '/about/',
-    component: ComponentCreator('/about/','0fa'),
+    path: '/about',
+    component: ComponentCreator('/about','408'),
     exact: true
   },
   {
