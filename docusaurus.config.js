@@ -6,7 +6,7 @@ const footer = require('./footer');
 module.exports = {
   title: 'Hello, I am Ameng!',
   tagline: '科技改变世界，技术成就未来！',
-  url: 'https://iameng.cn',
+  url: 'https://ameng.site',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -15,7 +15,7 @@ module.exports = {
   projectName: 'mysite', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'iameng.cn',
+      title: 'ameng.site',
       logo: {
         alt: '阿猛的博客',
         src: 'img/logo.jpeg',
