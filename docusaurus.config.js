@@ -73,7 +73,6 @@ const config = {
             label: '文档',
           },
           { to: '/blog', label: '博客', position: 'left' },
-          { to: '/works', label: '作品', position: 'left' },
           { to: '/about', label: '关于', position: 'left' },
           {
             href: 'https://github.com/ameng404',
