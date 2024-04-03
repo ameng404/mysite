@@ -26,11 +26,11 @@ jobs:
           ACCESS_KEY_ID: ${{ secrets.OSS_KEY_ID }}
           ACCESS_KEY_SECRET: ${{ secrets.OSS_KEY_SECRET }}
         run: |
-          ossutil rm -rf oss://ameng-site --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=your-endpoint
+          ossutil rm -rf oss://ameng-site --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=oss-cn-hangzhou.aliyuncs.com
 
       - name: Sync files to OSS
         env:
           ACCESS_KEY_ID: ${{ secrets.OSS_KEY_ID }}
           ACCESS_KEY_SECRET: ${{ secrets.OSS_KEY_SECRET }}
         run: |
-          ossutil cp -r ./build oss://ameng-site --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=your-endpoint
+          ossutil cp -r ./build oss://ameng-site --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=oss-cn-hangzhou.aliyuncs.com
