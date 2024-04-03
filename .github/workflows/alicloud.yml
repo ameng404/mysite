@@ -11,6 +11,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "20.x"
       # 执行应用打包步骤
       - name: Install dependencies and build
         run: |
