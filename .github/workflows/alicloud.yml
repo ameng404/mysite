@@ -1,9 +1,9 @@
-name: Sync to OSS
+name: CI
 
 on:
   push:
     branches:
-      - main # 这里可以根据您的需要更改分支名称
+      - master # 这里可以根据您的需要更改分支名称
 
 jobs:
   sync:
