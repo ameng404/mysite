@@ -18,10 +18,10 @@ jobs:
       with:
         node-version: 18.x
     # npm install
-    - name: yarn add & build
+    - name: npm install & build
       run: |
-        yarn add
-        yarn build
+        npm install
+        npm run build
       env:
         CI: true
     # 设置阿里云OSS的 id/secret，存储到 github 的 secrets 中
