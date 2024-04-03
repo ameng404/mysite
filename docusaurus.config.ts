@@ -23,7 +23,7 @@ var _hmt = _hmt || [];
 const config: Config = {
   title: "Hello, I am Ameng!",
   tagline: "科技改变世界，技术成就未来！",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.jpeg",
 
   url: "https://ameng.site",
   baseUrl: "/",
@@ -52,15 +52,13 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/ameng404/mysite/tree/master/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/ameng404/mysite/tree/master/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -86,7 +84,7 @@ const config: Config = {
           label: "文档",
         },
         { to: "/blog", label: "博客", position: "left" },
-        { to: "/about", label: "关于", position: "left" },
+        { to: "/about", label: "关于", position: "right" },
         {
           href: "https://github.com/ameng404",
           label: "GitHub",
