@@ -1,35 +1,37 @@
-name: CI
-
-on:
-  push:
-    branches:
-      - master
-
+name: deploy to aliyun oss
+ 
+on: [push]
+ 
 jobs:
   build:
+ 
     runs-on: ubuntu-latest
-
+ 
     steps:
-      - name: Checkout master
-        uses: actions/checkout@v2
-        with:
-          ref: master
-
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "18.x"
-
-      - name: Build project
-        run: yarn install && yarn build
-        
-      - name: Upload to OSS
-        uses: manyuanrong/setup-ossutil@master
-        with:
-          endpoint: oss-cn-hangzhou.aliyuncs.com
-          access-key-id: ${{ secrets.OSS_KEY_ID }}
-          access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
-      - name: cp files to aliyun
-        run: ossutil cp -rf /build oss://ameng-site/
+    # 切代码到 runner
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    # 使用 node:18
+    - name: use Node.js 18.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 18.x
+    # npm install
+    - name: yarn add & build
+      run: |
+        yarn add
+        yarn build
+      env:
+        CI: true
+    # 设置阿里云OSS的 id/secret，存储到 github 的 secrets 中
+    - name: setup aliyun oss
+      uses: manyuanrong/setup-ossutil@master
+      with:
+        endpoint: oss-cn-hangzhou.aliyuncs.com
+        access-key-id: ${{ secrets.OSS_KEY_ID }}
+        access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+    - name: cp files to aliyun
+      run: ossutil cp -rf /build oss://ameng-site/
  
 
