@@ -1,37 +1,36 @@
-name: deploy to aliyun oss
- 
-on: [push]
- 
-jobs:
-  build:
- 
-    runs-on: ubuntu-latest
- 
-    steps:
-    # 切代码到 runner
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-    # 使用 node:18
-    - name: use Node.js 18.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 18.x
-    # npm install
-    - name: npm install & build
-      run: |
-        npm install
-        npm run build
-      env:
-        CI: true
-    # 设置阿里云OSS的 id/secret，存储到 github 的 secrets 中
-    - name: setup aliyun oss
-      uses: manyuanrong/setup-ossutil@master
-      with:
-        endpoint: oss-cn-hangzhou.aliyuncs.com
-        access-key-id: ${{ secrets.OSS_KEY_ID }}
-        access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
-    - name: cp files to aliyun
-      run: ossutil cp -rf /build oss://ameng-site/
- 
+name: Sync to OSS
 
+on:
+  push:
+    branches:
+      - main # 这里可以根据您的需要更改分支名称
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # 执行应用打包步骤
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run docs:build
+      - name: Install ossutil
+        run: |
+          curl -L https://gosspublic.alicdn.com/ossutil/1.7.0/ossutil64 -o /usr/local/bin/ossutil
+          chmod +x /usr/local/bin/ossutil
+
+      - name: Delete existing files in OSS
+        env:
+          ACCESS_KEY_ID: ${{ secrets.OSS_KEY_ID }}
+          ACCESS_KEY_SECRET: ${{ secrets.OSS_KEY_SECRET }}
+        run: |
+          ossutil rm -rf oss://ameng-site --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=your-endpoint
+
+      - name: Sync files to OSS
+        env:
+          ACCESS_KEY_ID: ${{ secrets.OSS_KEY_ID }}
+          ACCESS_KEY_SECRET: ${{ secrets.OSS_KEY_SECRET }}
+        run: |
+          ossutil cp -r ./build oss://ameng-site --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=your-endpoint
