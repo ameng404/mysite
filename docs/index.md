@@ -2,16 +2,16 @@
 pageType: home
 
 hero:
-  name: iameng.cn
-  text: 阿猛的博客
-  tagline: iameng.cn tagline
+  name: 阿猛的日常
+  text: 
+  tagline: 科技改变世界，技术成就未来！
   actions:
     - theme: brand
-      text: Quick Start
-      link: /guide/
+      text: 爱前端
+      link: /fe/
     - theme: alt
-      text: Github
-      link: https://github.com/web-infra-dev/rspress
+      text: 爱摄影
+      link: /photos/
   image:
     src: /rspress-icon.png
     alt: iameng.cn Logo

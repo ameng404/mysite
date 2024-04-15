@@ -15,11 +15,11 @@ export default defineConfig({
       {
         icon: "github",
         mode: "link",
-        content: "https://github.com/web-infra-dev/rspress",
+        content: "https://github.com/ameng404/myiste",
       },
     ],
     footer: {
-      message: "xx",
+      message: "© 2024 阿猛的日常. All Rights Reserved.",
     },
   },
 });
