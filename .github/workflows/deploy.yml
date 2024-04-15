@@ -2,7 +2,7 @@ name: Deploy Rspress site to Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
   workflow_dispatch:
 
@@ -48,7 +48,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ secrets.PAGE_URL }}
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
