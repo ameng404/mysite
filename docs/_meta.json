@@ -1,0 +1,15 @@
+[{
+    "text": "博客",
+    "link": "/blogs/",
+    "activeMatch": "/blogs/"
+  }, {
+    "text": "前端",
+    "link": "/fe/",
+    "activeMatch": "/fe/"
+  },
+  {
+    "text": "关于",
+    "link": "/about/",
+    "activeMatch": "/about/"
+  }
+]
