@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "20.x"
+
+      - name: Build project
+        run: npm i -g pnpm && pnpm install && pnpm build
+
+      - name: Upload COS
+        uses: TencentCloud/cos-action@v1
+        with:
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          cos_bucket: ${{ secrets.BUCKET }}
+          cos_region: ap-shanghai
+          local_path: dist
+          remote_path: /
+          clean: true
