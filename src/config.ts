@@ -44,6 +44,11 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
+			name: "摄影",
+			url: "https://photos.ameng404.com", // Internal links should not include the base path, as it is automatically added
+			external: true, // Show an external link icon and will open in a new tab
+		},
+		{
 			name: "GitHub",
 			url: "https://github.com/ameng404", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
