@@ -1,4 +1,4 @@
-name: CI
+name: Aliyun CI
 
 on:
   push:
@@ -25,10 +25,11 @@ jobs:
 
       - name: Upload to oss
         id: upload_to_oss
-        uses: JohnGuan/oss-upload-action@main
+        uses: tvrcgo/upload-to-oss@v0.1.1
         with:
           key-id: ${{ secrets.OSS_KEY_ID }}
           key-secret: ${{ secrets.OSS_KEY_SECRET }}
-          region: oss-cn-hangzhou
           bucket: ${{ secrets.OSS_BUCKET }}
-          assets: /
+          region: oss-cn-hangzhou
+          asset-path: ./dist
+          target-path: /
