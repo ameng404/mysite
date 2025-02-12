@@ -24,12 +24,12 @@ jobs:
         run: npm i -g pnpm && pnpm install && pnpm build
 
       - name: Upload to oss
-        id: upload_to_oss
-        uses: yinlinyang/ali-oss-utils@1.0.1
+        uses: chf007/aliyun-oss-upload-action@main
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_KEY_SECRET }}
         with:
-          access-key-id: ${{ secrets.OSS_KEY_ID }}
-          access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
-          region: oss-cn-hangzhou
+          source-dir: './dist'
+          dest-dir: '/'
           bucket: ${{ secrets.OSS_BUCKET }}
-          source: ./dist
-          target: /
+          region: 'oss-cn-hangzhou'
