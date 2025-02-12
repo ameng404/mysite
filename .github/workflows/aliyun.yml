@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "20.x"
+
+      - name: Build project
+        run: npm i -g pnpm && pnpm install && pnpm build
+
+      - name: Upload to oss
+        id: upload_to_oss
+        uses: JohnGuan/oss-upload-action@main
+        with:
+          key-id: ${{ secrets.OSS_KEY_ID }}
+          key-secret: ${{ secrets.OSS_KEY_SECRET }}
+          region: oss-cn-hangzhou
+          bucket: ${{ secrets.OSS_BUCKET }}
+          assets: /
