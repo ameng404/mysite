@@ -24,15 +24,15 @@ jobs:
         run: npm i -g pnpm && pnpm install && pnpm build
 
       - name: Deploy OSS
-          uses: taixw2/deploy-aliyun-oss@v1
-          with:
-            # aliyun config
-            region: oss-cn-hangzhou.aliyuncs.com
-            access-key-id: ${{ secrets.OSS_KEY_ID }}
-            access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
-            bucket: ${{ secrets.OSS_BUCKET }}
-            secure: true
-            # deploy config
-            entry: dist/**/* # glob pattern
-            remote-dir: /
-            path-rewrite: ^dist/
+        uses: taixw2/deploy-aliyun-oss@v1
+        with:
+          # aliyun config
+          region: oss-cn-hangzhou.aliyuncs.com
+          access-key-id: ${{ secrets.OSS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+          bucket: ${{ secrets.OSS_BUCKET }}
+          secure: true
+          # deploy config
+          entry: dist/**/* # glob pattern
+          remote-dir: /
+          path-rewrite: ^dist/
