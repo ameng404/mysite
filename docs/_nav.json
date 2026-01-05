@@ -1,0 +1,12 @@
+[
+  {
+    "text": "JavaScript",
+    "link": "/javascript/",
+    "activeMatch": "^/javascript/"
+  },
+  {
+    "text": "关于",
+    "link": "/about/",
+    "activeMatch": "/about/"
+  }
+]
