@@ -23,6 +23,14 @@ jobs:
       - name: Build project
         run: npm i -g pnpm && pnpm install && pnpm build
 
+      - name: Verify build output
+        run: |
+          echo "Build output contents:"
+          ls -la dist/
+          echo "Total files: $(find dist -type f | wc -l)"
+
+      # BUCKET 格式需为 bucketname-appid，如 mysite-1234567890
+      # 确保 GitHub Secrets 中 SECRET_ID、SECRET_KEY、BUCKET 已正确配置
       - name: Upload COS
         uses: TencentCloud/cos-action@v1
         with:
