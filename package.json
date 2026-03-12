@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/rss": "^4.0.9",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/sitemap": "3.2.1",
     "@astrojs/svelte": "^6.0.1",
     "@astrojs/tailwind": "^5.1.2",
     "@fontsource-variable/jetbrains-mono": "^5.1.1",
@@ -67,5 +67,10 @@
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1"
   },
-  "packageManager": "pnpm@9.14.4"
+  "packageManager": "pnpm@9.14.4",
+  "pnpm": {
+    "overrides": {
+      "@astrojs/sitemap": "3.2.1"
+    }
+  }
 }
