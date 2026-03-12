@@ -23,17 +23,14 @@ jobs:
       - name: Build project
         run: npm i -g pnpm && pnpm install && pnpm build
 
-      - name: Install coscmd
-        run: sudo pip install coscmd
-
-      # 需在 GitHub Settings → Secrets 中配置 SecretId、SecretKey（名称区分大小写）
-      - name: Configure coscmd
-        env:
-          SECRET_ID: ${{ secrets.SECRET_ID }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          BUCKET: docs-1300533487
-          REGION: ap-shanghai
-        run: coscmd config -a ${{ secrets.SECRET_ID }} -s ${{ secrets.SECRET_KEY }} -b ${{ secrets.BUCKET }} -r iameng-cn-1258310295
+      - name: Upload COS
+        uses: zkqiang/tencent-cos-action@v0.1.0
+        with:
+          args: delete -r -f / && upload -r ./dist/ /
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          bucket: ${{ secrets.BUCKET }}
+          region: ap-shanghai
 
       - name: Upload
         run: coscmd upload -rfs --delete dist/ / --ignore "./.git/*"
