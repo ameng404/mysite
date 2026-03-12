@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: "22.x"
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
       - name: Build project
         run: npm i -g pnpm && pnpm install && pnpm build
 
@@ -29,15 +34,16 @@ jobs:
           ls -la dist/
           echo "Total files: $(find dist -type f | wc -l)"
 
+      # 使用 coscmd 替代 cos-action，可输出更清晰的错误信息
       # BUCKET 格式需为 bucketname-appid，如 mysite-1234567890
-      # 确保 GitHub Secrets 中 SECRET_ID、SECRET_KEY、BUCKET 已正确配置
+      - name: Setup coscmd
+        run: pip install coscmd
+
+      - name: Configure coscmd
+        run: |
+          coscmd config -a ${{ secrets.SECRET_ID }} -s ${{ secrets.SECRET_KEY }} \
+            -b ${{ secrets.BUCKET }} -r ap-shanghai
+
       - name: Upload COS
-        uses: TencentCloud/cos-action@v1
-        with:
-          secret_id: ${{ secrets.SECRET_ID }}
-          secret_key: ${{ secrets.SECRET_KEY }}
-          cos_bucket: ${{ secrets.BUCKET }}
-          cos_region: ap-shanghai
-          local_path: dist
-          remote_path: /
-          clean: true
+        run: |
+          coscmd upload -rfs --delete dist/ /
