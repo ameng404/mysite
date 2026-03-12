@@ -32,5 +32,13 @@ jobs:
           bucket: ${{ secrets.BUCKET }}
           region: ap-shanghai
 
-      - name: Upload
-        run: coscmd upload -rfs --delete dist/ / --ignore "./.git/*"
+      - name: Upload to COS
+        uses: horan-geeker/cos-action@1.0.0
+        with:
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          cos_bucket: ${{ secrets.BUCKET }}
+          cos_region: ap-shanghai
+          local_path: ./dist
+          remote_path: /static/
+          clean: true
