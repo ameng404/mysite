@@ -18,9 +18,11 @@ interface Props {
   lang?: string
   setOGTypeArticle?: boolean;
   headings? : MarkdownHeading[]
+  /** 用于 og:image 的绝对 URL */
+  ogImage?: string
 }
 
-const { title, banner, description, lang, setOGTypeArticle, headings = [] } = Astro.props
+const { title, banner, description, lang, setOGTypeArticle, headings = [], ogImage } = Astro.props
 const hasBannerCredit =
   siteConfig.banner.enable && siteConfig.banner.credit.enable
 const hasBannerLink = !!siteConfig.banner.credit.url
@@ -28,7 +30,7 @@ const hasBannerLink = !!siteConfig.banner.credit.url
 const mainPanelTop = siteConfig.banner.enable ? `calc(${BANNER_HEIGHT}vh - ${MAIN_PANEL_OVERLAPS_BANNER_HEIGHT}rem)` : "5.5rem"
 ---
 
-<Layout title={title} banner={banner} description={description} lang={lang} setOGTypeArticle={setOGTypeArticle}>
+<Layout title={title} banner={banner} description={description} lang={lang} setOGTypeArticle={setOGTypeArticle} ogImage={ogImage}>
 
 <!-- Navbar -->
 <slot slot="head" name="head"></slot>
