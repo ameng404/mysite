@@ -1,3 +1,14 @@
+---
+title: RESTful API 设计规范
+description: RESTful API 设计原则、最佳实践、资源命名规范、HTTP 方法使用指南及安全配置
+published: 2026-03-12
+updated: 2026-03-12
+tags: [RESTful, API设计, 网络协议, 后端开发, 接口规范]
+category: 网络
+draft: false
+lang: zh-CN
+---
+
 # RESTful API 设计规范
 
 ## 概述

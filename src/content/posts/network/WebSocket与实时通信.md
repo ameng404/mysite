@@ -1,3 +1,14 @@
+---
+title: WebSocket 与实时通信
+description: 深入解析 WebSocket 协议原理、实时通信实现、心跳重连机制及实际应用场景
+published: 2026-03-12
+updated: 2026-03-12
+tags: [WebSocket, 实时通信, 网络协议, 前端开发, 全双工通信]
+category: 网络
+draft: false
+lang: zh-CN
+---
+
 # WebSocket 与实时通信
 
 ## 概述
