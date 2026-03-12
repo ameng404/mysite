@@ -1,4 +1,4 @@
-name: Deploy to Tencent COS
+name: Tencent CI
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout master
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2
         with:
           ref: master
 
@@ -24,21 +24,12 @@ jobs:
         run: npm i -g pnpm && pnpm install && pnpm build
 
       - name: Upload COS
-        uses: zkqiang/tencent-cos-action@v0.1.0
-        with:
-          args: delete -r -f / && upload -r ./dist/ /
-          secret_id: ${{ secrets.SECRET_ID }}
-          secret_key: ${{ secrets.SECRET_KEY }}
-          bucket: ${{ secrets.BUCKET }}
-          region: ap-shanghai
-
-      - name: Upload to COS
-        uses: horan-geeker/cos-action@1.0.0
+        uses: TencentCloud/cos-action@v1
         with:
           secret_id: ${{ secrets.SECRET_ID }}
           secret_key: ${{ secrets.SECRET_KEY }}
           cos_bucket: ${{ secrets.BUCKET }}
           cos_region: ap-shanghai
-          local_path: ./dist
-          remote_path: /static/
+          local_path: dist
+          remote_path: /
           clean: true
