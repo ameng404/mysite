@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout master
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.5
         with:
           ref: master
 
@@ -23,24 +23,16 @@ jobs:
       - name: Build project
         run: npm i -g pnpm && pnpm install && pnpm build
 
-      - name: Build
-        run: pnpm build
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
       - name: Install coscmd
-        run: pip install coscmd
+        run: sudo pip install coscmd
 
       - name: Configure coscmd
-        run: |
-          coscmd config \
-            -a ${{ secrets.SECRET_ID }} \
-            -s ${{ secrets.SECRET_KEY }} \
-            -b ${{ secrets.BUCKET }} \
-            -r ap-shanghai
+        env:
+          SECRET_ID: ${{ secrets.SecretId }}
+          SECRET_KEY: ${{ secrets.SecretKey }}
+          BUCKET: docs-1300533487
+          REGION: ap-shanghai
+        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
 
-      - name: Upload to COS
-        run: coscmd upload -rfs --delete dist/ /
+      - name: Upload
+        run: coscmd upload -rfs --delete dist/ / --ignore "./.git/*"
