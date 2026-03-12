@@ -1,4 +1,4 @@
-name: Tencent CI
+name: Deploy to Tencent COS
 
 on:
   push:
@@ -6,44 +6,45 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout master
-        uses: actions/checkout@v2
-        with:
-          ref: master
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup node
-        uses: actions/setup-node@v1
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: "22.x"
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Build project
-        run: npm i -g pnpm && pnpm install && pnpm build
-
-      - name: Verify build output
-        run: |
-          echo "Build output contents:"
-          ls -la dist/
-          echo "Total files: $(find dist -type f | wc -l)"
-
-      # 使用 coscmd 替代 cos-action，可输出更清晰的错误信息
-      # BUCKET 格式需为 bucketname-appid，如 mysite-1234567890
-      - name: Setup coscmd
+      - name: Install coscmd
         run: pip install coscmd
 
       - name: Configure coscmd
         run: |
-          coscmd config -a ${{ secrets.SECRET_ID }} -s ${{ secrets.SECRET_KEY }} \
-            -b ${{ secrets.BUCKET }} -r ap-shanghai
+          coscmd config \
+            -a ${{ secrets.SECRET_ID }} \
+            -s ${{ secrets.SECRET_KEY }} \
+            -b ${{ secrets.BUCKET }} \
+            -r ap-shanghai
 
-      - name: Upload COS
-        run: |
-          coscmd upload -rfs --delete dist/ /
+      - name: Upload to COS
+        run: coscmd upload -rfs --delete dist/ /
