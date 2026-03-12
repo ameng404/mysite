@@ -26,13 +26,14 @@ jobs:
       - name: Install coscmd
         run: sudo pip install coscmd
 
+      # 需在 GitHub Settings → Secrets 中配置 SecretId、SecretKey（名称区分大小写）
       - name: Configure coscmd
         env:
-          SECRET_ID: ${{ secrets.SecretId }}
-          SECRET_KEY: ${{ secrets.SecretKey }}
+          SECRET_ID: ${{ secrets.SECRET_ID }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
           BUCKET: docs-1300533487
           REGION: ap-shanghai
-        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+        run: coscmd config -a ${{ secrets.SECRET_ID }} -s ${{ secrets.SECRET_KEY }} -b ${{ secrets.BUCKET }} -r iameng-cn-1258310295
 
       - name: Upload
         run: coscmd upload -rfs --delete dist/ / --ignore "./.git/*"
