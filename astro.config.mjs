@@ -1,6 +1,5 @@
 import sitemap from "@astrojs/sitemap";
-import svelte from "@astrojs/svelte";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import swup from "@swup/astro";
 import Compress from "astro-compress";
 import icon from "astro-icon";
@@ -25,9 +24,6 @@ export default defineConfig({
 	base: "/",
 	trailingSlash: "always",
 	integrations: [
-		tailwind({
-			nesting: true,
-		}),
 		swup({
 			theme: false,
 			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
@@ -44,13 +40,11 @@ export default defineConfig({
 		}),
 		icon({
 			include: {
-				"preprocess: vitePreprocess(),": ["*"],
 				"fa6-brands": ["*"],
 				"fa6-regular": ["*"],
 				"fa6-solid": ["*"],
 			},
 		}),
-		svelte(),
 		sitemap(),
 		Compress({
 			CSS: false,
@@ -112,6 +106,7 @@ export default defineConfig({
 		],
 	},
 	vite: {
+		plugins: [tailwindcss()],
 		build: {
 			rollupOptions: {
 				onwarn(warning, warn) {
