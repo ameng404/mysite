@@ -28,7 +28,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile && pnpm build
 
       - name: Upload COS
-        uses: horan-geeker/cos-action@1.0.0
+        uses: TencentCloud/cos-action@v1
         with:
           secret_id: ${{ secrets.SECRET_ID }}
           secret_key: ${{ secrets.SECRET_KEY }}
